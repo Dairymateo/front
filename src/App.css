@@ -1,38 +1,319 @@
-.App {
+@import "primereact/resources/themes/lara-light-indigo/theme.css";  
+@import "primereact/resources/primereact.min.css";                  
+@import "primeicons/primeicons.css";
+@import "bootstrap/dist/css/bootstrap.css"; 
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f9f9f9;
+}
+
+
+
+.users-page{
+  margin: 2px auto;
+  text-align: center;
+
+}
+
+
+
+
+.users-page h1{
+  margin: 2px auto;
+  text-align: center;
+
+}
+
+.users-page h3{
+  margin: 2px auto;
+  text-align: center;
+
+}
+
+.users-page .users-list{
+  background-color: #fff;
+  padding: 20px auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 30px;
+
+
+}
+
+.users-page .users-list table .btn{
+  margin: 5px;
+}
+
+.userView h1{
+  margin: 0;
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 25px;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+
+.InfoInterna{
+  margin: 0;
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 20px;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+.InfoInterna p {
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 10px;
+}
+
+.InfoInterna p span {
+  
+  display: inline-block;
+  min-width: 100px;
+}
+
+
+.InfoInterna p span:first-child {
+  color: #6c757d;
+}
+
+
+.InfoInterna p span:last-child {
+  color: #333;
+  font-weight: bold;
+  
+}
+
+
+.InfoInterna {
+  padding: 30px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 50px;
+}
+
+
+.addnewuser{
+  text-align: right;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.addnewuser .btn i{
+  padding: 0 10px;
+}
+
+
+/* Contenedor principal del formulario de agregar usuario */
+.addUserForm {
+  background-color: #fff;
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 30px auto;
+  max-width: 500px;
+  text-align: left;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.addUserForm h1 {
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 25px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.addUserForm .form-group {
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.addUserForm label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+
+.addUserForm input[type="text"],
+.addUserForm input[type="number"],
+.addUserForm input[type="email"],
+.addUserForm input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+  color: #333;
+}
+
+.addUserForm input[type="text"]:focus,
+.addUserForm input[type="number"]:focus,
+.addUserForm input[type="email"]:focus,
+.addUserForm input[type="password"]:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+
+.addUserForm .submit-button {
+  background-color: #28a745;
   color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.addUserForm .submit-button:hover {
+  background-color: #1e7e34;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.addUserForm .error-message {
+  color: #dc3545;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 10px;
 }
+
+
+.addUserForm .success-message {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+
+
+.editUserForm {
+  background-color: #fff;
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 20px auto;
+  max-width: 450px;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+.editUserForm h1 {
+  color: #007bff; 
+  font-size: 26px;
+  font-weight: 500;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+
+.editUserForm .form-group {
+  margin-bottom: 25px;
+}
+
+
+.editUserForm label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #495057;
+}
+
+
+.editUserForm input[type="text"],
+.editUserForm input[type="number"],
+.editUserForm input[type="email"],
+.editUserForm input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 16px;
+  color: #333;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.editUserForm input[type="text"]:focus,
+.editUserForm input[type="number"]:focus,
+.editUserForm input[type="email"]:focus,
+.editUserForm input[type="password"]:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+
+.editUserForm .submit-button {
+  background-color: #007bff; 
+  color: white;
+  border: none;
+  padding: 14px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.editUserForm .submit-button:hover {
+  background-color: #0056b3;
+}
+
+
+.editUserForm .error-message {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 12px;
+  border-radius: 4px;
+  margin-top: 15px;
+}
+
+.editUserForm .success-message {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  padding: 12px;
+  border-radius: 4px;
+  margin-top: 15px;
+}
+
+
+.editUserForm .form-group label[for="password"] {
+  font-style: italic;
+  color: #777;
+}
+
+
+
+
+
+
+
